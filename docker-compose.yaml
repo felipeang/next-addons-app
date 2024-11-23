@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  nextjs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./src/dynamic-modules:/app/src/dynamic-modules # Mapea los módulos dinámicos
+    ports:
+      - "3000:3000" # Expone el puerto
+    environment:
+      NODE_ENV: production
